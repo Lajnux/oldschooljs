@@ -5,6 +5,7 @@ import { EasyCasket } from 'oldschooljs/dist/simulation/clues/Easy';
 import { HardCasket } from 'oldschooljs/dist/simulation/clues/Hard';
 import { EliteCasket } from 'oldschooljs/dist/simulation/clues/Elite';
 import { MasterCasket } from 'oldschooljs/dist/simulation/clues/Master';
+import LootTable from 'oldschooljs/dist/structures/LootTable';
 
 import { Bank, ArrayItemsResolved } from '../types';
 import { PerkTier } from '../constants';
@@ -65,6 +66,16 @@ export interface KillableMonster {
 	respawnTime?: number;
 	levelRequirements?: LevelRequirements;
 	uniques?: ArrayItemsResolved;
+}
+
+export interface Openable {
+	name: string;
+	itemID: number;
+	aliases: string[];
+	table: LootTable;
+	emoji: string;
+	levelRequirements?: LevelRequirements;
+	qpRequired?: number;
 }
 
 export interface GroupMonsterActivityTaskOptions extends MonsterActivityTaskOptions {

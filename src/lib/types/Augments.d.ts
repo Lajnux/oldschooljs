@@ -9,7 +9,7 @@ import Monster from 'oldschooljs/dist/structures/Monster';
 import { CustomGet } from '../settings/types/UserSettings';
 import { Bank, MakePartyOptions, Skills, ItemBank } from '.';
 import { SkillsEnum } from '../skilling/types';
-import { KillableMonster } from '../minions/types';
+import { KillableMonster, Openable } from '../minions/types';
 import { UserFullGearSetup, GearSetupTypes } from '../gear/types';
 import { Item } from 'oldschooljs/dist/meta/types';
 import { MinigameIDsEnum } from '../minions/data/minigames';
@@ -124,6 +124,11 @@ declare module 'discord.js' {
 		 * the second item is a string containing the reason they don't have the requirements.
 		 */
 		hasMonsterRequirements(monster: KillableMonster): [false, string] | [true];
+		/**
+		 * Returns a tuple where the first item is true/false if they have the requirements,
+		 * the second item is a string containing the reason they don't have the requirements.
+		 */
+		hasOpenableRequirements(openable: Openable): [false, string] | [true];
 		/**
 		 * Returns the KC the user has for this monster.
 		 */
